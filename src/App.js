@@ -1,10 +1,9 @@
+import Header from './components/Header';
+
 function App() {
   return (
     <div className="App">
-      
-        <h1>Welcome to our project!</h1>
-        <p>React Movie List, Team: Dev Avocados</p>
-      
+        <Header />
     </div>
   );
 }
