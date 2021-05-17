@@ -1,12 +1,13 @@
 import React from 'react'
 
-const Search = () => {
+const Search = (props) => {
     return (
         <div>
             <form action="" method="get">
                 <input 
                     type="text"
-                    id=""
+                    value={props.value}
+                    onChange={(event)=>props.setSearch(event.target.value)}
                     name="search"
                     placeholder="Search Movies By Name"
                 />
