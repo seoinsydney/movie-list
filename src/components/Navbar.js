@@ -5,8 +5,7 @@ const Navbar = () => {
         <div>
             <ul>
                 <li><a href="#">Movies</a></li>
-                <li><a href="#">TV Shows</a></li>
-                <li><a href="#">Actors</a></li>
+                <li><a href="#">My list</a></li>
             </ul>
         </div>
     )
