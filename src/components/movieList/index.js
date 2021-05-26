@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import { Button, Card, Container, Row, Col } from 'react-bootstrap';
+import {Link, withRouter } from "react-router-dom";
+import MovieDetails from '../movieDetails/index.js';
 
-function Index(props) {
-    const [error, setError] = useState("error");
+function Index() {
+    const [error, setError] = useState();
     const [isLoaded, setIsLoaded] = useState(false);
     const [movies, setMovies] = useState([]);
 
@@ -19,13 +21,13 @@ function Index(props) {
         body: JSON.stringify(postBody)
     };
 
-    if( isLoaded == false){
+    if( isLoaded === false){
+        setIsLoaded(true);
         fetch(movieUrl, requestMetadata)
         .then(res => res.json())
         .then(movies => {
             setMovies(movies.results);
             console.log(movies.results);
-            setIsLoaded(true);
         },
         (error) => {
             setError(error);
@@ -34,23 +36,47 @@ function Index(props) {
         );
     }
 
+    const getTrailers = (trailerUrl) => {
+        if( isLoaded == false){
+            setIsLoaded(true);
+            fetch(trailerUrl, requestMetadata)
+            .then(res => res.json())
+            .then(movies => {
+                setMovies(movies.results);
+                console.log(movies.results);
+
+            },
+            (error) => {
+                setError(error);
+                console.log(error);
+                }
+            );
+        }
+    }
+
+    
+
     return (
         <Container>
             <Row>
                 {movies.map(item =>
+                
                 <Col key={item.id}>
                 <Card  style={{ width: '18rem' }}>
                     <Card.Img variant="top" src={'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/'+ item.poster_path} />
                     <Card.Body>
                         <Card.Title>{item.original_title}</Card.Title>
                         <p>
-                        overview: {item.overview}
-                        popularity: {item.popularity}
-                        {item.release_date}
-                        {item.vote_average}
-                        {item.vote_count}
-                        {item.vote_count}
+                        overview: {item.overview} <br/>
+                        popularity: {item.popularity} <br/>
+                        {item.release_date} <br/>
+                        {item.vote_average} <br/>
+                        {item.vote_count} <br/>
+                        {item.vote_count} <br/>
                     </p>
+                    <p>{error}</p>
+                    <Link to={"/moviedetails?id=" +item.id }>see trailer</Link>
+                    
                     </Card.Body>
                 </Card>
                 </Col>
@@ -60,4 +86,4 @@ function Index(props) {
     )
 }
 
-export default Index
+export default withRouter(Index)

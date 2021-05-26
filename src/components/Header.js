@@ -1,12 +1,12 @@
 //import React from 'react'
-import Navbar from './Navbar'
+import TopNav from './topNav'
 import Search from './Search'
 
 const Header = () => {
     return (
         <header>
             <h1>Movie-list App</h1>
-            <Navbar />
+            <TopNav />
             <Search /> 
         </header>
     )
