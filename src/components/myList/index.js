@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link, withRouter } from "react-router-dom";
+import './index.scss';
 
 function Index() {
     return (
