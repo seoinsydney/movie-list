@@ -46,7 +46,7 @@ function Index() {
 
     return (
         <div className="movieContainer">
-                <Search /> 
+                {/* <Search />  */}
 
                 <Divider orientation="left" plain><h2>Popular Movies List</h2></Divider>
             
