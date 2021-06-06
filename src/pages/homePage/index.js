@@ -31,32 +31,16 @@ function Index() {
         .then(res => res.json())
         .then(movies => {
             setMovies(movies.results);
-            console.log(movies.results);
+            //console.log(movies.results);
         },
         (error) => {
             setError(error);
-            console.log(error);
+            //console.log(error);
             }
         );
     }
 
-    const getTrailers = (trailerUrl) => {
-        if( isLoaded == false){
-            setIsLoaded(true);
-            fetch(trailerUrl, requestMetadata)
-            .then(res => res.json())
-            .then(movies => {
-                setMovies(movies.results);
-                console.log(movies.results);
 
-            },
-            (error) => {
-                setError(error);
-                console.log(error);
-                }
-            );
-        }
-    }
 
     
 

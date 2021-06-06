@@ -14,45 +14,23 @@ function Index() {
         // type: "hot",
         // limit: 10
     };
-    const requestMetadata = {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(postBody)
-    };
+
 
     if( isLoaded === false){
         setIsLoaded(true);
-        fetch(movieUrl, requestMetadata)
+        fetch(movieUrl)
         .then(res => res.json())
         .then(movies => {
             setMovies(movies.results);
-            console.log(movies.results);
+            // console.log(movies.results);
         },
         (error) => {
             setError(error);
-            console.log(error);
+            // console.log(error);
             }
         );
     }
-    const getTrailers = (trailerUrl) => {
-        if( isLoaded == false){
-            setIsLoaded(true);
-            fetch(trailerUrl, requestMetadata)
-            .then(res => res.json())
-            .then(movies => {
-                setMovies(movies.results);
-                console.log(movies.results);
 
-            },
-            (error) => {
-                setError(error);
-                console.log(error);
-                }
-            );
-        }
-    }
 
     return (
 

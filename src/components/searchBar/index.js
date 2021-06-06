@@ -18,17 +18,17 @@ function SearchNew({type }) {
     if(oldQuery != query && query.length >= 3)
     {
         setOldQuery(query);
-        console.log(movieUrl);
+        // console.log(movieUrl);
         //setIsLoaded(true);
         fetch(movieUrl)
         .then(res => res.json())
         .then(moviesTemp => {
             setMovies(moviesTemp.results);
-            console.log(moviesTemp.results);
+            // console.log(moviesTemp.results);
         },
         (error) => {
             setError(error);
-            console.log(error);
+            // console.log(error);
             }
         );
     }

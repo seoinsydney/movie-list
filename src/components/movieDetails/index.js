@@ -21,17 +21,17 @@ function Index() {
     if(!isLoaded)
     {
         setIsLoaded(true);
-        console.log(movieUrl);
+        // console.log(movieUrl);
         //setIsLoaded(true);
         fetch(movieUrl)
         .then(res => res.json())
         .then(movieTemp => {
             setMovie(movieTemp);
-            console.log(movieTemp);
+            // console.log(movieTemp);
         },
         (error) => {
             setError(error);
-            console.log(error);
+            // console.log(error);
             }
         );
     }
