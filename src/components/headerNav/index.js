@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import Search from '../searchBar'
 import { Link } from "react-router-dom";
 import Logo from '../../images/logo.png';
-import { SearchOutlined } from '@ant-design/icons';
 import './index.scss';
 
 

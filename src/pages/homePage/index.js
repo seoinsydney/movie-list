@@ -1,14 +1,11 @@
 import React, { useState } from 'react'
-// import { Button, Card, Container, Row, Col } from 'react-bootstrap';
-// import { Row, Col, Slider } from 'antd';
 import {Link, withRouter } from "react-router-dom";
-// import MovieDetails from '../../components/movieDetails/index.js';
 import './index.scss';
-
 import Search from '../../components/searchBar/index.js'
-// import { SearchOutlined } from '@ant-design/icons';
+import { Divider  } from 'antd';
 
-import { Divider, Rate  } from 'antd';
+
+
 
 function Index() {
     const [error, setError] = useState();
@@ -67,7 +64,7 @@ function Index() {
         <div className="movieContainer">
                 <Search /> 
 
-                <Divider orientation="left" plain><h2>Popular movie list</h2></Divider>
+                <Divider orientation="left" plain><h2>Popular Movies List</h2></Divider>
             
                 {movies.map(item =>
                 <Link to={"/moviedetails?id=" +item.id }>

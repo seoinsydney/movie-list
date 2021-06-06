@@ -3,7 +3,7 @@ import React, {useState } from 'react'
 import { withRouter, useLocation } from "react-router-dom";
 import { Input, Row, Col, Divider, Rate } from 'antd';
 import './index.scss';
-
+import { StarOutlined } from '@ant-design/icons';
 
 function Index() {
     const search = useLocation().search;
@@ -39,27 +39,24 @@ function Index() {
 
     return (
         <div className="movieDetails">
+            <div className="movieDetails__overlay">
+                <img variant="top" src={'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/'+ movie.poster_path} />
+            </div>
             <h1>Movie details</h1>
             <Row gutter={24} justify="center" align="top">
-                <Col span={8}>
+                <Col span={6}>
                     <img variant="top" src={'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/'+ movie.poster_path} />
                 </Col>
                 <Col span={8}>
-                    <h2>{movie.original_title}<p>{movie.vote_average}</p></h2>
+
+                    <h2>{movie.original_title}</h2>
+                    <figure>
+                        <StarOutlined twoToneColor="#eb2f96" style={{ fontSize: '30px', color: 'yellow', }} />
+                        <h3>{movie.vote_average}</h3>
+                    </figure>
                     <h3>overview: </h3>
                     <p>{movie.overview}</p>
                     <p>Released: {movie.release_date}</p>
-
-
-
-                    {/* <p>Released: {item.release_date}</p> */}
-                    {/* <p>
-                    overview: {item.overview} <br/>
-                    popularity: {item.popularity} <br/>
-                        <br/>
-                    {item.vote_average}
-                    </p> */}
-                    {/* <Rate allowHalf disabled defaultValue={movie.vote_average} count={10} /> */}
                     <p>{error}</p>
                 </Col>
             </Row>
