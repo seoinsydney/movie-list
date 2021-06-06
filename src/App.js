@@ -6,6 +6,7 @@ import MovieDetails from './components/movieDetails/index.js';
 import MovieList from './pages/homePage/index.js';
 import MyList from './components/myList/index.js';
 
+
 function App() {
 
   return (

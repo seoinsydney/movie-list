@@ -1,20 +1,16 @@
 
-$line-height: 60px;
-
 
 .topNav {
-    height: $line-height;
-    line-height: $line-height;
-    text-align: center;
-    align-items: center;
-    vertical-align: middle;
-
+    width: 100%;
+    max-width: 1600px;
+    margin: auto;
     display: flex;
     justify-content: space-between;
-    padding: 0 50px;
+    // padding: 0 50px;
 
     img {
-        width: 50px;
+        width: 200px;
+        margin-top: 20px;
     }
     ul {
         display: flex;
@@ -24,12 +20,6 @@ $line-height: 60px;
             a {
                 color: lightgray;
                 text-decoration: none;
-            }
-            img {
-                width: 100%;
-                max-width: 120px;
-                margin-top: 30px;
-                margin-right: 50px;
             }
         }
     }

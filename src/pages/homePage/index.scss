@@ -2,14 +2,21 @@
 
 .movieContainer {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1600px;
     margin: auto;
     overflow: hidden;
+    // padding: 0 50px;
     img {
-        width: 200px;
+        width: 100%;
     }
     .movieCard {
         float: left;
+        margin-right: 20px;
+        width: 100%;
+        max-width: 300px;
+        section {
+            height: 150px;
+        }
     }
 
 }

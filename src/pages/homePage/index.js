@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 // import { Button, Card, Container, Row, Col } from 'react-bootstrap';
-import { Row, Col, Slider } from 'antd';
+// import { Row, Col, Slider } from 'antd';
 import {Link, withRouter } from "react-router-dom";
-import MovieDetails from '../../components/movieDetails/index.js';
+// import MovieDetails from '../../components/movieDetails/index.js';
 import './index.scss';
 
-import Search from './../../components/headerNav/searchNew.js'
-import { SearchOutlined } from '@ant-design/icons';
+import Search from '../../components/searchBar/index.js'
+// import { SearchOutlined } from '@ant-design/icons';
+
+import { Divider, Rate  } from 'antd';
 
 function Index() {
     const [error, setError] = useState();
@@ -63,34 +65,22 @@ function Index() {
 
     return (
         <div className="movieContainer">
-                <SearchOutlined />
                 <Search /> 
 
-            <div className="">
+                <Divider orientation="left" plain><h2>Popular movie list</h2></Divider>
+            
                 {movies.map(item =>
-                
+                <Link to={"/moviedetails?id=" +item.id }>
                 <div className="movieCard" key={item.id}>
-                    <div  style={{ width: '18rem' }}>
-                        <img variant="top" src={'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/'+ item.poster_path} />
-
-                            <p>{item.original_title}</p>
-                            <p>
-                            overview: {item.overview} <br/>
-                            popularity: {item.popularity} <br/>
-                            {item.release_date} <br/>
-                            {item.vote_average} <br/>
-                            {item.vote_count} <br/>
-                            {item.vote_count} <br/>
-                        </p>
+                    <img variant="top" src={'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/'+ item.poster_path} />
+                    <section>
+                        <p>{item.original_title}</p>
                         <p>{error}</p>
-                        <Link to={"/moviedetails?id=" +item.id }>see details</Link>
-                        
-
-                    </div>
+                    </section>
                 </div>
+                </Link>
                 )}
             </div>
-        </div>
 
     )
 }

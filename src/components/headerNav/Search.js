@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Input, Button } from 'antd';
-import SearchNew from './searchNew.js';
+import SearchNew from '../searchBar/index.js';
 
 
 

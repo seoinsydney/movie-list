@@ -1,0 +1,30 @@
+
+.movieDetails {
+    margin-bottom: 150px;
+    h1 {
+        font-size: 3em;
+        text-align: center;
+    }
+    h2 {
+        font-size: 2em;
+    }
+    h3 {
+        color: white;
+        font-size: 1.8em;
+    }
+    p {
+        font-size: 16px;
+    }
+    img {
+        width: 450px;
+        margin: center;
+    }
+    .ant-row .ant-row-center .ant-row-top {
+        margin: 0!important;
+    }
+    .ant-row-center {
+            margin: 0!important;
+    }
+}
+
+
