@@ -1,9 +1,9 @@
 import React from 'react';
 import Footer from './components/Footer';
-import Header from './components/Header.js';
+import Header from './components/headerNav/index.js';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import MovieDetails from './components/movieDetails/index.js';
-import MovieList from './components/movieList/index.js';
+import MovieDetails from './pages/movieDetails/index.js';
+import MovieList from './pages/homePage/index.js';
 import MyList from './components/myList/index.js';
 
 function App() {
