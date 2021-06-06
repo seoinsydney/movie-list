@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import MovieDetails from './components/movieDetails/index.js';
 import MovieList from './pages/homePage/index.js';
 import MyList from './components/myList/index.js';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {

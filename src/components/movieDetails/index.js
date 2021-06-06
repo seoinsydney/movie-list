@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { withRouter, useLocation } from "react-router-dom";
 import './index.scss';
+import { Container, Row, Col } from 'react-bootstrap'
+import Star from '../../images/star-icon.png';
 
 function Index() {
     const search = useLocation().search;
@@ -16,17 +18,13 @@ function Index() {
     if(!isLoaded)
     {
         setIsLoaded(true);
-        // console.log(movieUrl);
-        //setIsLoaded(true);
         fetch(movieUrl)
         .then(res => res.json())
         .then(movieTemp => {
             setMovie(movieTemp);
-            // console.log(movieTemp);
         },
         (error) => {
             setError(error);
-            // console.log(error);
             }
         );
     }
@@ -38,23 +36,25 @@ function Index() {
                 <img variant="top" src={'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/'+ movie.poster_path} />
             </div>
             <h1>Movie details</h1>
-            <div justify="center" align="top">
-                <div>
-                    <img variant="top" src={'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/'+ movie.poster_path} />
-                </div>
-                <div>
 
-                    <h2>{movie.original_title}</h2>
+            <Container className="movieDetails__container">
+            <Row>
+                <Col xs={4} md={{ span: 4, offset: 2 }} >
+                <img variant="top" src={'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/'+ movie.poster_path} />
+                </Col>
+                <Col xs={4}>
+                <h2>{movie.original_title}</h2>
                     <figure>
-                        <p>star icon</p>
+                        <img src={Star} alt="star icon"/>
                         <h3>{movie.vote_average}</h3>
                     </figure>
-                    <h3>overview: </h3>
+                    <h3>Overview: </h3>
                     <p>{movie.overview}</p>
                     <p>Released: {movie.release_date}</p>
                     <p>{error}</p>
-                </div>
-            </div>
+                </Col>
+            </Row>
+            </Container>
 
         </div>
     )
