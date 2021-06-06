@@ -2,8 +2,6 @@ import React, { useState } from 'react'
 import {Link, withRouter } from "react-router-dom";
 import './index.scss';
 import Search from '../../components/searchBar/index.js'
-import { Divider  } from 'antd';
-
 
 
 
@@ -31,11 +29,9 @@ function Index() {
         .then(res => res.json())
         .then(movies => {
             setMovies(movies.results);
-            //console.log(movies.results);
         },
         (error) => {
             setError(error);
-            //console.log(error);
             }
         );
     }
@@ -46,9 +42,9 @@ function Index() {
 
     return (
         <div className="movieContainer">
-                {/* <Search />  */}
+                <Search /> 
 
-                <Divider orientation="left" plain><h2>Popular Movies List</h2></Divider>
+                <h2>Popular Movies List</h2>
             
                 {movies.map(item =>
                 <Link to={"/moviedetails?id=" +item.id } key={item.id}>

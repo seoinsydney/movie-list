@@ -1,15 +1,10 @@
-import React, {useState } from 'react'
-// import queryString from 'query-string'
+import React, { useState } from 'react'
 import { withRouter, useLocation } from "react-router-dom";
-import { Input, Row, Col, Divider, Rate } from 'antd';
 import './index.scss';
-import { StarOutlined } from '@ant-design/icons';
 
 function Index() {
     const search = useLocation().search;
     const movieId = new URLSearchParams(search).get('id');
-    const [query, setQuery] = useState('');
-    const [oldQuery, setOldQuery] = useState('');
     const [error, setError] = useState();
     const [isLoaded, setIsLoaded] = useState(false);
     const [movie, setMovie] = useState({});
@@ -43,23 +38,23 @@ function Index() {
                 <img variant="top" src={'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/'+ movie.poster_path} />
             </div>
             <h1>Movie details</h1>
-            <Row gutter={24} justify="center" align="top">
-                <Col span={6}>
+            <div justify="center" align="top">
+                <div>
                     <img variant="top" src={'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/'+ movie.poster_path} />
-                </Col>
-                <Col span={8}>
+                </div>
+                <div>
 
                     <h2>{movie.original_title}</h2>
                     <figure>
-                        <StarOutlined twoToneColor="#eb2f96" style={{ fontSize: '30px', color: 'yellow', }} />
+                        <p>star icon</p>
                         <h3>{movie.vote_average}</h3>
                     </figure>
                     <h3>overview: </h3>
                     <p>{movie.overview}</p>
                     <p>Released: {movie.release_date}</p>
                     <p>{error}</p>
-                </Col>
-            </Row>
+                </div>
+            </div>
 
         </div>
     )
