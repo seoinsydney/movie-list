@@ -67,8 +67,8 @@ function Index() {
                 <Divider orientation="left" plain><h2>Popular Movies List</h2></Divider>
             
                 {movies.map(item =>
-                <Link to={"/moviedetails?id=" +item.id }>
-                <div className="movieCard" key={item.id}>
+                <Link to={"/moviedetails?id=" +item.id } key={item.id}>
+                <div className="movieCard" >
                     <img variant="top" src={'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/'+ item.poster_path} />
                     <section>
                         <p>{item.original_title}</p>
