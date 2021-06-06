@@ -3,7 +3,7 @@ import React from 'react'
 const Footer = () => {
     return (
         <footer>
-            <p>&copy; Movie-list App. All Rights Reserved </p>
+            <p>&copy; Dev Avocados React Movie List. All Rights Reserved </p>
         </footer>
     )
 }

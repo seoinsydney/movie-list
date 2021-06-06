@@ -2,6 +2,7 @@ import React, {useState } from 'react'
 // import { Row, Col, Slider } from 'antd';
 import { Link } from "react-router-dom";
 import './index.scss';
+import { Divider  } from 'antd';
 
 
 function SearchNew({type }) {
@@ -35,22 +36,22 @@ function SearchNew({type }) {
     return (
         <>
             <div className="searchMovieContainer">
+            <Divider orientation="left" plain><h2>Search Movies</h2></Divider>
                 <input name="searchMovie" onChange={e => setQuery(e.target.value)} placeholder=" search movie.." />
                     {movies.map(item =>
-                    
+                    <Link to={"/moviedetails?id=" +item.id }>
                     <div className="movieCard" key={item.id}>
                         <img variant="top" src={'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/'+ item.poster_path} />
-
+                        <section>
                             <p>{item.original_title}</p>
-                            <p>
                             {/* overview: {item.overview} <br/> */}
-                            popularity: {item.popularity} <br/>
-                            {item.release_date} <br/>
-                            {item.vote_average} <br/>
-                        </p>
-                        <p>{error}</p>
-                        <Link to={"/moviedetails?id=" +item.id }>see trailer</Link>
+                            {/* popularity: {item.popularity} <br/> */}
+                            {/* {item.release_date} <br/> */}
+                            {/* {item.vote_average} <br/> */}
+                            <p>{error}</p>
+                        </section>
                     </div>
+                    </Link>
                     )}
             </div>
         </>
