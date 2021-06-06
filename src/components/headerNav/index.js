@@ -1,27 +1,27 @@
 import React, { useState } from 'react'
 import Search from './searchNew'
 import { Link } from "react-router-dom";
+import Logo from '../../images/logo.png';
+import { SearchOutlined } from '@ant-design/icons';
+import './index.scss';
+import { Input } from 'antd';
 
-
-
-const Header = () => {
-
-
+function Header () {
 
     return (
-        <>
-                    <h1>Movie-list App</h1>
-        <header>
-
+        <header className="topNav">
             <ul>
-                <li><Link to="/" >Home</Link></li>
-                <li><Link to="/mylist" >My List</Link></li>
-                <img src="" alt="" />
-                <img src="" alt="" />
+                <li><Link to="/" ><img src={Logo} alt="Avocado Logo" /></Link></li>
+                {/* <li><Link to="/mylist" >My List</Link></li> */}
             </ul>
-            <Search /> 
+
+            <div>
+
+                {/* <SearchOutlined />
+                <Search />  */}
+                {/* <Input placeholder=" search.." /> */}
+            </div>
         </header>
-        </>
     )
 }
 

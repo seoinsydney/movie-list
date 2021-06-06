@@ -1,0 +1,40 @@
+
+$line-height: 60px;
+
+
+.topNav {
+    height: $line-height;
+    line-height: $line-height;
+    text-align: center;
+    align-items: center;
+    vertical-align: middle;
+
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+
+    img {
+        width: 50px;
+    }
+    ul {
+        display: flex;
+        justify-content: start;
+        li {
+            list-style: none;
+            a {
+                color: lightgray;
+                text-decoration: none;
+            }
+            img {
+                width: 100%;
+                max-width: 120px;
+                margin-top: 30px;
+                margin-right: 50px;
+            }
+        }
+    }
+}
+
+
+
+
