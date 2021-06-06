@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import {Link, withRouter } from "react-router-dom";
 import './index.scss';
 import Search from '../../components/searchBar/index.js'
-
+import Star from '../../images/star-icon.png';
 
 
 function Index() {
@@ -52,6 +52,10 @@ function Index() {
                     <img variant="top" src={'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/'+ item.poster_path} />
                     <section>
                         <p>{item.original_title}</p>
+                        <figure>
+                            <img src={Star} alt="star icon"/>
+                            <p>{item.vote_average}</p>
+                        </figure>
                         <p>{error}</p>
                     </section>
                 </div>

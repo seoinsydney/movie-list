@@ -1,19 +1,15 @@
 
 .searchMovieContainer {
-
     .movieCard{
         section {
             height: 150px;
         }
     }
-
     input {
         width: 99%;
-        // max-width: 1570px;
         overflow: hidden;
         margin: 30px auto;
         height: 40px;
         color: black!important;
     }
-
 }

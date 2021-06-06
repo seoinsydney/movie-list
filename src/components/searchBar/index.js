@@ -1,6 +1,7 @@
 import React, {useState } from 'react'
 import { Link } from "react-router-dom";
 import './index.scss';
+import Star from '../../images/star-icon.png';
 
 
 function SearchNew({type }) {
@@ -16,17 +17,13 @@ function SearchNew({type }) {
     if(oldQuery != query && query.length >= 3)
     {
         setOldQuery(query);
-        // console.log(movieUrl);
-        //setIsLoaded(true);
         fetch(movieUrl)
         .then(res => res.json())
         .then(moviesTemp => {
             setMovies(moviesTemp.results);
-            // console.log(moviesTemp.results);
         },
         (error) => {
             setError(error);
-            // console.log(error);
             }
         );
     }
@@ -40,8 +37,15 @@ function SearchNew({type }) {
                     <Link to={"/moviedetails?id=" +item.id }  key={item.id}>
                     <div className="movieCard">
                         <img variant="top" src={'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/'+ item.poster_path} />
+
+
+
                         <section>
                             <p>{item.original_title}</p>
+                            <figure>
+                                <img src={Star} alt="star icon"/>
+                                <p>{item.vote_average}</p>
+                            </figure>
                             <p>{error}</p>
                         </section>
                     </div>
