@@ -1,0 +1,15 @@
+
+
+.movieContainer {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    img {
+        width: 200px;
+    }
+    .movieCard {
+        float: left;
+    }
+
+}
