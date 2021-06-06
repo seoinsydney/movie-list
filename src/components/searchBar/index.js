@@ -39,8 +39,8 @@ function SearchNew({type }) {
             <Divider orientation="left" plain><h2>Search Movies</h2></Divider>
                 <input name="searchMovie" onChange={e => setQuery(e.target.value)} placeholder=" search movie.." />
                     {movies.map(item =>
-                    <Link to={"/moviedetails?id=" +item.id }>
-                    <div className="movieCard" key={item.id}>
+                    <Link to={"/moviedetails?id=" +item.id }  key={item.id}>
+                    <div className="movieCard">
                         <img variant="top" src={'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/'+ item.poster_path} />
                         <section>
                             <p>{item.original_title}</p>
