@@ -36,10 +36,6 @@ function Index() {
         );
     }
 
-
-
-    
-
     return (
         <div className="movieContainer">
                 <Search /> 

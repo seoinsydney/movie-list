@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { withRouter, useLocation } from "react-router-dom";
-import './index.scss';
 import { Container, Row, Col } from 'react-bootstrap'
 import Star from '../../images/star-icon.png';
+import './index.scss';
 
 function Index() {
     const search = useLocation().search;
