@@ -1,15 +1,40 @@
+@import "~bootstrap/scss/bootstrap";
 
 .searchMovieContainer {
-    .movieCard{
-        section {
-            height: 150px;
-        }
+    width: 100%;
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 50px;
+    .movieCard {
+        margin-top: 20px;
     }
     input {
-        width: 99%;
+        width: 100%;
         overflow: hidden;
-        margin: 30px auto;
+        margin: auto;
         height: 40px;
         color: black!important;
+    }
+    img {
+        width: 100%;
+    }
+    a:link {
+        text-decoration: none;
+    }
+    .movieImage {
+        width: 100%;
+        text-align: center;
+        figure {
+            display: flex;
+            justify-content: center;
+            p{
+                font-size: 20px;
+                margin: 0;
+            }
+            img {
+                width: 40px;
+                height: 30px;
+            }
+        }
     }
 }

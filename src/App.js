@@ -11,20 +11,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
 
   return (
-    <>
-      <Router>
-        <Header />
-        <div className="App">
-          <Switch>
-            <Route exact path="/" component={MovieList} />
-            <Route exact path="/moviedetails" component={MovieDetails} />
-            <Route exact path="/mylist" component={MyList} />
-          </Switch>
-          <Footer />
-        </div>
-      </Router>
-    </>
-
+    <Router>
+      <Header />
+      <div className="App">
+        <Switch>
+          <Route exact path="/" component={MovieList} />
+          <Route exact path="/moviedetails" component={MovieDetails} />
+          <Route exact path="/mylist" component={MyList} />
+        </Switch>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

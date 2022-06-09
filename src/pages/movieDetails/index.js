@@ -31,18 +31,18 @@ function Index() {
 
 
     return (
-        <div className="movieDetails">
+        <Container className="movieDetails">
             <div className="movieDetails__overlay">
-                <img variant="top" src={'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/'+ movie.poster_path} />
+                <img variant="top" src={'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/'+ movie.poster_path} alt="movie image"/>
             </div>
             <h1>Movie details</h1>
 
             <Container className="movieDetails__container">
             <Row>
-                <Col xs={4} md={{ span: 4, offset: 2 }} >
-                <img variant="top" src={'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/'+ movie.poster_path} />
+                <Col xs={12} sm={12} md={4} lg={{ span: 4, offset: 2 }} >
+                <img variant="top" src={'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/'+ movie.poster_path} alt="movie image"/>
                 </Col>
-                <Col xs={4}>
+                <Col xs={12} sm={12} md={8} lg={4}>
                 <h2>{movie.original_title}</h2>
                     <figure>
                         <img src={Star} alt="star icon"/>
@@ -56,7 +56,7 @@ function Index() {
             </Row>
             </Container>
 
-        </div>
+        </Container>
     )
 }
 

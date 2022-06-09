@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 /* font-family: 'Montserrat', sans-serif; */
-
+@import 'bootstrap/dist/css/bootstrap.min.css'; 
 
 body {
   margin: 0;
@@ -11,43 +11,33 @@ body {
   color: white!important;
   font-family: 'Montserrat', sans-serif;
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
-
-.App {
-  width: 100%;
-  max-width: 1600px;
-  margin: auto;
-  /* padding: 5px; */
-}
-
-
 h1 {
   color: white!important;
 }
- 
 h2 {
   color: white!important;
 }
-
 p {
-  font-size: 20px;
+  font-size: 16px;
 }
-
 a {
   color: white!important;
   transition: .3s;
 }
 a:hover {
-  color: #c18ef199!important;
+  color: #debcfd99!important;
   transition: .3s;
 }
-
 footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
   text-align: center;
 }
 
