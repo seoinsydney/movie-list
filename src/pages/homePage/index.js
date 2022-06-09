@@ -47,7 +47,7 @@ function Index() {
                         </Col>
                     </Row>
                     <Row>
-                        <Col className="desktop">
+                        <Col xsm={6} sm={6} md={4} lg={2} className="desktop">
                             <h2>Popular <br/> Movies <br/> List</h2>
                         </Col>
                         {movies.map(item =>

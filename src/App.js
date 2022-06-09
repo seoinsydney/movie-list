@@ -12,8 +12,8 @@ function App() {
 
   return (
     <Router>
-      <Header />
       <div className="App">
+      <Header />
         <Switch>
           <Route exact path="/" component={MovieList} />
           <Route exact path="/moviedetails" component={MovieDetails} />
